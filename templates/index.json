@@ -1,0 +1,283 @@
+{
+  "sections": {
+    "product_list_fa6P9H": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "name": "t:names.header",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_list_text_YFtzcL": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
+              "settings": {
+                "text": "<h2>Explore the collection</h2>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_list_button_MWeP9V": {
+              "type": "_product-list-button",
+              "name": "t:names.product_list_button",
+              "settings": {
+                "label": "View all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_list_text_YFtzcL",
+            "product_list_button_MWeP9V"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 4,
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_677WP3": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "square",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title_YXxMTj": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "price_JQzVV4": {
+              "type": "price",
+              "name": "t:names.product_price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_card_gallery_677WP3",
+            "product_title_YXxMTj",
+            "price_JQzVV4"
+          ]
+        }
+      },
+      "name": "t:names.product_list",
+      "settings": {
+        "collection": "all",
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "max_products": 10,
+        "columns": 3,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 22,
+        "rows_gap": 28,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 28,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 42,
+        "padding-block-end": 48
+      }
+    },
+    "naw_editorial": {
+      "type": "naw-editorial-home",
+      "settings": {
+        "eyebrow": "NIRHALIs / AUDIO & CONNECTIVITY",
+        "heading": "Sound meets connection.",
+        "description": "Carefully selected earbuds, headphones and charging cables from third-party brands, with clear model information and useful pairings.",
+        "cta_text": "Explore the collection",
+        "cta_link": "shopify://collections/all",
+        "subline": "Independent multi-brand store / Thane, India",
+        "visual_label": "The everyday edit",
+        "categories_heading": "Find your essentials",
+        "categories_description": "Listen. Connect. Pair.",
+        "category_1": "headphones",
+        "category_description_1": "Everyday listening, without distraction.",
+        "category_2": "cables",
+        "category_description_2": "Charge and connect with clarity.",
+        "category_3": "audio-charging-bundles",
+        "category_description_3": "Curated pairings. Currently unavailable.",
+        "principles_heading": "Independent selection",
+        "principle_1": "Third-party brands",
+        "principle_2": "Listed prices upfront",
+        "principle_3": "Questions welcome on WhatsApp",
+        "hero_image": "shopify://shop_images/naw-campaign-wave-detail.webp",
+        "category_image_1": "shopify://shop_images/naw-category-sound.webp",
+        "category_image_2": "shopify://shop_images/naw-category-connect.webp",
+        "category_image_3": ""
+      }
+    },
+    "naw_motion": {
+      "type": "naw-motion-story",
+      "settings": {
+        "label": "A quieter kind of technology",
+        "heading": "The small details make a difference.",
+        "description": "Everyday sound, charging and connectivity accessories from independent brands, brought together with thoughtful selection.",
+        "link_label": "Browse essentials",
+        "link_target": "shopify://collections/all",
+        "motion_gif": "shopify://shop_images/naw-audio-wave.gif",
+        "motion_poster": "shopify://shop_images/naw-motion-poster.webp",
+        "caption": "NAW / Sound in motion"
+      }
+    },
+    "naw_brand_signature": {
+      "type": "naw-brand-signature",
+      "settings": {
+        "heading": "NIRHALIs Audio & Wire brand",
+        "banner": "shopify://shop_images/naw-brand-signature-banner.webp",
+        "copy": "Independent selection. Familiar brands. Clear product information.",
+        "button_text": "Explore the collection",
+        "button_link": "shopify://collections/all"
+      }
+    },
+    "naw_bundle_perks": {
+      "type": "naw-bundles-upgrades",
+      "settings": {
+        "eyebrow": "THE PAIRING EDIT",
+        "status": "CURRENTLY UNAVAILABLE",
+        "heading": "Better Together. Better Value.",
+        "description": "Curated two-product pairings for sound and charging. Explore the sets now; ordering opens after stock and fulfilment checks.",
+        "pair_product_one": "shopify://products/noise-buds-r1-true-wireless-earbuds",
+        "pair_product_two": "shopify://products/belkin-boostcharge-braided-usb-c-to-usb-c-60w-cable-2m-black",
+        "clean_pair_one": "shopify://products/belkin-boostcharge-braided-usb-c-to-usb-c-60w-cable-2m-black",
+        "clean_pair_two": "shopify://products/belkin-boostcharge-usb-c-to-usb-c-cable-60w-2m-white",
+        "audio_pair_one": "shopify://products/belkin-boostcharge-usb-c-to-usb-c-cable-2m-black",
+        "audio_pair_two": "shopify://products/belkin-boostcharge-usb-c-to-usb-c-cable-60w-2m-white",
+        "product_caption": "Noise Buds R1 + Belkin braided USB-C, 2m",
+        "feature_label": "FEATURED PAIRING / AUDIO & CHARGE",
+        "feature_title": "Audio & Charge Set.",
+        "feature_description": "Noise Buds R1 wireless earbuds paired with a durable Belkin braided USB-C cable. Designed to be useful together, without unnecessary extras.",
+        "feature_price": "₹1,999",
+        "feature_price_label": "bundle price · currently sold out",
+        "feature_comparison": "Individual NAW total ₹2,148 · save ₹149. Ordering is not enabled while availability is unconfirmed.",
+        "more_heading": "More thoughtful pairings",
+        "pair_two_title": "Durability Duo",
+        "pair_two_description": "Belkin braided black + standard white USB-C 2m",
+        "pair_two_price": "₹1,599 · save ₹99",
+        "pair_three_title": "Everyday Charge Duo",
+        "pair_three_description": "Belkin standard black + white USB-C 2m",
+        "pair_three_price": "₹1,549 · save ₹149",
+        "upgrade_label": "COMPATIBILITY FIRST",
+        "upgrade_heading": "Choose the right fit.",
+        "upgrade_description": "Need help checking a phone, laptop or charging adapter? Contact NAW with your device model. No physical gift or charger is included unless clearly listed.",
+        "disclaimer": "All bundle products are currently sold out and cannot be purchased. Stock, exact variants and terms must be verified before checkout opens. Savings compare current NAW individual listings.",
+        "link_text": "Explore all three bundles",
+        "link_url": "/pages/bundles-and-upgrades"
+      }
+    }
+  },
+  "order": [
+    "naw_editorial",
+    "naw_motion",
+    "product_list_fa6P9H",
+    "naw_bundle_perks",
+    "naw_brand_signature"
+  ]
+}
