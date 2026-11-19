@@ -1,0 +1,62 @@
+{% comment %}
+  Brand-only abstract motion study. Never displays manufactured product footage.
+  Optional Shopify-hosted real video is click-to-play, with no autoplay or network fetch before interaction.
+{% endcomment %}
+<section class="naw-motion" aria-labelledby="naw-motion-title-{{ section.id }}">
+  <div class="naw-motion__inner">
+    <div class="naw-motion__story">
+      {% if section.settings.label != blank %}<p class="naw-motion__label">{{ section.settings.label | escape }}</p>{% endif %}
+      <h2 id="naw-motion-title-{{ section.id }}">{{ section.settings.heading | escape }}</h2>
+      <p class="naw-motion__body">{{ section.settings.description | escape }}</p>
+      {% if section.settings.link_label != blank and section.settings.link_target != blank %}
+        <a class="naw-motion__link" href="{{ section.settings.link_target }}">{{ section.settings.link_label | escape }} <span aria-hidden="true">↗</span></a>
+      {% endif %}
+    </div>
+    <div class="naw-motion__visual">
+      {% if section.settings.brand_video != blank %}
+        {{ section.settings.brand_video | video_tag: controls: true, autoplay: false, loop: false, muted: true, preload: 'none', image_size: '1100x', class: 'naw-motion__video' }}
+      {% else %}
+        {% if section.settings.motion_gif != blank %}
+          {{ section.settings.motion_gif | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'naw-motion__gif', alt: section.settings.motion_gif.alt, widths: '400, 700, 1000', sizes: '(min-width: 880px) 53vw, 90vw' }}
+        {% endif %}
+        {% if section.settings.motion_poster != blank %}
+          {{ section.settings.motion_poster | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'naw-motion__still', alt: section.settings.motion_poster.alt, widths: '400, 700, 1000', sizes: '(min-width: 880px) 53vw, 90vw' }}
+        {% endif %}
+      {% endif %}
+      <span class="naw-motion__caption">{{ section.settings.caption | escape }}</span>
+    </div>
+  </div>
+</section>
+{% stylesheet %}
+.naw-motion { max-width: 1400px; padding: 26px clamp(18px,4vw,60px) 52px; margin-inline: auto; }
+.naw-motion__inner { display:grid; grid-template-columns: .8fr 1.2fr; background:#2C2C2E; border-radius:22px; overflow:hidden; min-height:310px; }
+.naw-motion__story { display:flex; flex-direction:column; justify-content:center; padding:clamp(28px,5vw,62px); gap:14px; }
+.naw-motion__label { text-transform:uppercase; letter-spacing:.16em; color:#b6aca5; font-size:11px; font-weight:650; margin:0; }
+.naw-motion__story h2 { color:#FAF7F2; font-size:clamp(29px,3.6vw,48px); letter-spacing:-.05em; line-height:1.1; margin:0; }
+.naw-motion__body { max-width:420px; color:#c9c2bc; line-height:1.65; font-size:14px; margin:0; }
+.naw-motion__link { color:#FAF7F2; text-decoration:underline; text-underline-offset:5px; margin-top:10px; width:fit-content; }
+.naw-motion__link:focus-visible { outline:3px solid #E65100; outline-offset:4px; }
+.naw-motion__visual { position:relative; background:#FAF7F2; display:flex; align-items:center; justify-content:center; padding:24px; min-height:260px; }
+.naw-motion__gif,.naw-motion__still,.naw-motion__video { display:block; width:100%; height:auto; object-fit:contain; }
+.naw-motion__still { display:none; }
+.naw-motion__caption { position:absolute; left:26px; bottom:18px; color:#79716a; font-size:10px; letter-spacing:.1em; text-transform:uppercase; }
+@media(max-width:880px) { .naw-motion__inner { grid-template-columns:1fr; } .naw-motion__story { padding:38px 28px; } .naw-motion__visual { min-height:210px; } }
+@media(prefers-reduced-motion:reduce) { .naw-motion__gif { display:none; } .naw-motion__still { display:block; } }
+{% endstylesheet %}
+{% schema %}
+{
+  "name":"NAW Motion Study",
+  "settings":[
+    {"type":"text","id":"label","label":"Section label","default":"A quieter kind of technology"},
+    {"type":"text","id":"heading","label":"Headline","default":"Designed to fit your day."},
+    {"type":"textarea","id":"description","label":"Description","default":"From morning calls to an organised workspace, the details make everyday technology feel effortless."},
+    {"type":"text","id":"link_label","label":"Link text","default":"Browse essentials"},
+    {"type":"url","id":"link_target","label":"Link destination"},
+    {"type":"image_picker","id":"motion_gif","label":"Animated brand GIF"},
+    {"type":"image_picker","id":"motion_poster","label":"Still image for reduced motion"},
+    {"type":"video","id":"brand_video","label":"Optional real video (click-to-play)"},
+    {"type":"text","id":"caption","label":"Artwork caption","default":"NAW / Sound in motion"}
+  ],
+  "presets":[{"name":"NAW Motion Study"}]
+}
+{% endschema %}

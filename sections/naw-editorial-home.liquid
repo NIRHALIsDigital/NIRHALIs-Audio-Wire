@@ -1,0 +1,149 @@
+{% comment %}
+  NIRHALIs Audio & Wire storefront introduction and category navigation.
+  Every customer-facing text and collection is editable in the theme editor.
+  Product media is never fabricated; a merchant-provided hero image is optional.
+{% endcomment %}
+<section class="naw-intro" aria-label="{{ section.settings.heading | escape }}">
+  <div class="naw-intro__layout">
+    <div class="naw-intro__copy">
+      {% if section.settings.eyebrow != blank %}
+        <p class="naw-intro__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {% endif %}
+      <h1 class="naw-intro__title">{{ section.settings.heading | escape }}</h1>
+      <p class="naw-intro__description">{{ section.settings.description | escape }}</p>
+      {% if section.settings.cta_text != blank and section.settings.cta_link != blank %}
+        <a class="naw-intro__button" href="{{ section.settings.cta_link }}">{{ section.settings.cta_text | escape }} <span aria-hidden="true">↗</span></a>
+      {% endif %}
+      <p class="naw-intro__subline">{{ section.settings.subline | escape }}</p>
+    </div>
+    <div class="naw-intro__visual">
+      {% if section.settings.hero_image != blank %}
+        {{ section.settings.hero_image | image_url: width: 1500 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '480, 640, 900, 1200, 1500', sizes: '(min-width: 900px) 42vw, 100vw', class: 'naw-intro__visual-image', alt: section.settings.hero_image.alt }}
+      {% elsif settings.logo != blank %}
+        {{ settings.logo | image_url: width: 760 | image_tag: loading: 'eager', widths: '240, 480, 760', sizes: '(min-width: 900px) 320px, 240px', class: 'naw-intro__brand-image', alt: '' }}
+      {% endif %}
+      <span class="naw-intro__visual-label">{{ section.settings.visual_label | escape }}</span>
+    </div>
+  </div>
+  <div class="naw-intro__categories">
+    <div class="naw-intro__section-heading">
+      <h2>{{ section.settings.categories_heading | escape }}</h2>
+      <p>{{ section.settings.categories_description | escape }}</p>
+    </div>
+    <div class="naw-intro__category-grid">
+      {% for i in (1..3) %}
+        {% liquid
+          assign setting_key = 'category_' | append: i
+          assign description_key = 'category_description_' | append: i
+          assign group = section.settings[setting_key]
+          assign group_description = section.settings[description_key]
+          assign category_image_key = 'category_image_' | append: i
+          assign category_art = section.settings[category_image_key]
+        %}
+        {% if group != blank %}
+          <a href="{{ group.url }}" class="naw-intro__category-card">
+            {% if category_art != blank %}
+              <span class="naw-intro__category-artwork" aria-hidden="true">
+                {{ category_art | image_url: width: 800 | image_tag: loading: 'lazy', widths: '240, 440, 800', sizes: '(min-width: 860px) 22vw, 44vw', class: 'naw-intro__category-image', alt: '' }}
+              </span>
+            {% endif %}
+            <span class="naw-intro__category-eyebrow">{{ group.products_count }} {{ 'products' | escape }}</span>
+            <span class="naw-intro__category-title">{{ group.title | escape }}</span>
+            <span class="naw-intro__category-description">{{ group_description | escape }}</span>
+            <span class="naw-intro__category-arrow" aria-hidden="true">↗</span>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="naw-intro__principles" aria-label="{{ section.settings.principles_heading | escape }}">
+    <p>{{ section.settings.principles_heading | escape }}</p>
+    <p>{{ section.settings.principle_1 | escape }}</p>
+    <p>{{ section.settings.principle_2 | escape }}</p>
+    <p>{{ section.settings.principle_3 | escape }}</p>
+  </div>
+</section>
+{% stylesheet %}
+.naw-intro { max-width: 1400px; margin-inline: auto; padding: 12px clamp(18px, 4vw, 60px) 18px; color: #2C2C2E; }
+.naw-intro__layout { display: grid; grid-template-columns: 1.07fr .93fr; min-height: min(640px, 70vh); overflow: hidden; border-radius: 23px; background: #eee8df; }
+.naw-intro__copy { padding: clamp(36px, 7vw, 104px); align-self: center; }
+.naw-intro__eyebrow, .naw-intro__subline { margin: 0 0 30px; font-weight: 650; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
+.naw-intro__title { margin: 0; color: #2C2C2E; font-family: var(--font-heading--family), 'Manrope', sans-serif; font-size: clamp(42px, 5.5vw, 80px); font-weight: 700; letter-spacing: -.055em; line-height: 1.055; text-wrap: balance; }
+.naw-intro__description { max-width: 460px; margin: 24px 0 28px; font-size: clamp(15px, 1.5vw, 18px); line-height: 1.68; color: #545354; }
+.naw-intro__button { display: inline-flex; align-items: center; justify-content: space-between; gap: 34px; min-height: 52px; padding: 14px 20px; background: #2C2C2E; color: #FAF7F2; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; transition: transform .18s ease, background .18s ease; }
+.naw-intro__button:hover { color: #FAF7F2; background: #171719; transform: translateY(-2px); }
+.naw-intro__button:focus-visible { outline: 3px solid #E65100; outline-offset: 3px; }
+.naw-intro__subline { margin: 30px 0 0; color: #77716b; font-weight: 500; font-size: 10px; }
+.naw-intro__visual { position: relative; background: #FAF7F2; display: flex; align-items: center; justify-content: center; overflow: hidden; min-height: 360px; }
+.naw-intro__visual-image { height: 100%; width: 100%; object-fit: cover; }
+.naw-intro__brand-image { width: min(72%, 390px); height: auto; object-fit: contain; mix-blend-mode: multiply; }
+.naw-intro__visual-label { position: absolute; left: 24px; bottom: 22px; font-size: 10px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: #65605c; }
+.naw-intro__categories { padding-block: 80px 72px; }
+.naw-intro__section-heading { margin-bottom: 26px; display: flex; gap: 18px; justify-content: space-between; align-items: end; flex-wrap: wrap; }
+.naw-intro__section-heading h2 { margin: 0; color: #2C2C2E; font-weight: 700; letter-spacing: -.05em; font-size: clamp(30px, 3.8vw, 46px); }
+.naw-intro__section-heading p { margin: 0 0 4px; color: #706d6a; font-size: 14px; }
+.naw-intro__category-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.naw-intro__category-card { min-width: 0; min-height: 230px; position: relative; display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 3vw, 36px); border: 1px solid #e2dcd4; border-radius: 15px; background: #f5f1ec; color: #2C2C2E; text-decoration: none; transition: background .2s ease, transform .2s ease, border-color .2s ease; }
+.naw-intro__category-card:hover { color: #2C2C2E; background: #ebe4db; border-color: #c7bfb6; transform: translateY(-3px); }
+.naw-intro__category-card:focus-visible { outline: 3px solid #E65100; outline-offset: 3px; }
+.naw-intro__category-eyebrow { font-size: 11px; color: #8a837b; text-transform: uppercase; letter-spacing: .13em; }
+.naw-intro__category-title { margin-top: auto; font-size: clamp(24px, 2.8vw, 35px); letter-spacing: -.045em; font-weight: 700; line-height: 1.1; }
+.naw-intro__category-description { max-width: 230px; font-size: 12px; color: #68635e; line-height: 1.5; }
+.naw-intro__category-arrow { position: absolute; right: 28px; top: 24px; font-size: 20px; }
+.naw-intro__principles { padding: 20px 8px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 28px; border-top: 1px solid #ddd7d0; border-bottom: 1px solid #ddd7d0; color: #66615c; font-size: 12px; }
+.naw-intro__principles p { margin: 0; }
+.naw-intro__principles p:first-child { color: #2C2C2E; font-weight: 700; }
+@media (max-width: 860px) {
+  .naw-intro__layout { grid-template-columns: 1fr; min-height: 0; }
+  .naw-intro__copy { padding: 44px 28px 46px; }
+  .naw-intro__visual { min-height: 280px; }
+  .naw-intro__categories { padding-block: 56px 42px; }
+  .naw-intro__category-grid { grid-template-columns: 1fr; }
+  .naw-intro__category-card { min-height: 160px; }
+  .naw-intro__principles { display: grid; grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .naw-intro__section-heading { align-items: start; flex-direction: column; gap: 8px; }
+  .naw-intro__title { font-size: clamp(37px, 12vw, 54px); }
+  .naw-intro__principles { grid-template-columns: 1fr; }
+  .naw-intro__visual { min-height: 230px; }
+}
+@media (prefers-reduced-motion: reduce) { .naw-intro__button, .naw-intro__category-card { transition: none; } }
+.naw-intro__category-card { isolation: isolate; }
+.naw-intro__category-artwork { position: absolute; right: -10%; top: -2%; width: 76%; height: 105%; z-index: 0; pointer-events: none; opacity: .84; mask-image: linear-gradient(90deg, transparent 0%, #000 50%); }
+.naw-intro__category-image { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: multiply; }
+.naw-intro__category-card > :not(.naw-intro__category-artwork) { position: relative; z-index: 1; }
+.naw-intro__category-card .naw-intro__category-arrow { position: absolute; }
+@media(max-width: 860px) { .naw-intro__category-artwork { width: 52%; right: 0; } }
+{% endstylesheet %}
+{% schema %}
+{
+  "name": "NAW Editorial Storefront",
+  "settings": [
+    {"type":"text","id":"eyebrow","label":"Intro label","default":"NIRHALIs / AUDIO & WIRE"},
+    {"type":"text","id":"heading","label":"Main heading","default":"Good sound. Clear connections."},
+    {"type":"textarea","id":"description","label":"Introduction","default":"A carefully edited selection of listening, charging, and everyday desk essentials. Thoughtful details. Nothing unnecessary."},
+    {"type":"text","id":"cta_text","label":"Primary button text","default":"Explore the collection"},
+    {"type":"url","id":"cta_link","label":"Primary button link"},
+    {"type":"text","id":"subline","label":"Supporting line","default":"Quiet design / useful technology"},
+    {"type":"image_picker","id":"hero_image","label":"Original product photograph (optional)"},
+    {"type":"text","id":"visual_label","label":"Image caption","default":"The everyday edit"},
+    {"type":"text","id":"categories_heading","label":"Category heading","default":"Find your essentials"},
+    {"type":"text","id":"categories_description","label":"Category description","default":"Explore by how you use it."},
+    {"type":"collection","id":"category_1","label":"Category one"},
+    {"type":"text","id":"category_description_1","label":"Category one description","default":"Everyday listening, without distraction."},
+    {"type":"image_picker","id":"category_image_1","label":"Headphones category artwork"},
+    {"type":"collection","id":"category_2","label":"Category two"},
+    {"type":"text","id":"category_description_2","label":"Category two description","default":"Charge and connect with clarity."},
+    {"type":"image_picker","id":"category_image_2","label":"Cables category artwork"},
+    {"type":"collection","id":"category_3","label":"Category three"},
+    {"type":"text","id":"category_description_3","label":"Category three description","default":"Make room for focused work."},
+    {"type":"image_picker","id":"category_image_3","label":"Desk category artwork"},
+    {"type":"text","id":"principles_heading","label":"Trust bar intro","default":"A considered selection"},
+    {"type":"text","id":"principle_1","label":"Trust point one","default":"Clear product details"},
+    {"type":"text","id":"principle_2","label":"Trust point two","default":"UPI payment verification"},
+    {"type":"text","id":"principle_3","label":"Trust point three","default":"Support when you need it"}
+  ],
+  "presets": [{"name":"NAW Editorial Storefront"}]
+}
+{% endschema %}
