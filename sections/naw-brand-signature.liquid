@@ -1,0 +1,47 @@
+{% comment %}
+  NAW signature banner: approved merchant-provided brand art (not a product photo).
+  Editable desktop/mobile art and optional collection link.
+{% endcomment %}
+<section class="naw-signature" aria-label="{{ section.settings.heading | escape }}">
+  <div class="naw-signature__inner">
+    {% if section.settings.banner != blank %}
+      <picture class="naw-signature__media">
+        {% if section.settings.mobile_banner != blank %}
+          <source media="(max-width: 749px)" srcset="{{ section.settings.mobile_banner | image_url: width: 750 }}">
+        {% endif %}
+        {{ section.settings.banner | image_url: width: 1800 | image_tag: loading: 'lazy', widths: '600, 900, 1200, 1500, 1800', sizes: '(min-width: 1450px) 1350px, 100vw', class: 'naw-signature__image', alt: section.settings.banner.alt }}
+      </picture>
+    {% endif %}
+    <div class="naw-signature__bottom">
+      {% if section.settings.copy != blank %}<p>{{ section.settings.copy | escape }}</p>{% endif %}
+      {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+        <a href="{{ section.settings.button_link }}">{{ section.settings.button_text | escape }} <span aria-hidden="true">↗</span></a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% stylesheet %}
+.naw-signature { max-width: 1400px; padding: 32px clamp(18px,4vw,60px) 76px; margin-inline:auto; }
+.naw-signature__inner { overflow:hidden; border-radius:20px; border:1px solid #e4ded7; background:#f8f5f1; }
+.naw-signature__media { display:block; width:100%; }
+.naw-signature__image { display:block; width:100%; height:auto; object-fit:cover; }
+.naw-signature__bottom { display:flex; gap:20px; justify-content:space-between; align-items:center; padding:20px clamp(22px,3vw,38px) 24px; border-top:1px solid #e4ded7; }
+.naw-signature__bottom p { margin:0; color:#625e5a; font-size:14px; line-height:1.5; }
+.naw-signature__bottom a { flex-shrink:0; color:#2C2C2E; font-size:14px; font-weight:650; text-underline-offset:4px; }
+.naw-signature__bottom a:focus-visible { outline:3px solid #E65100; outline-offset:5px; }
+@media(max-width:749px) { .naw-signature { padding-top:20px; padding-bottom:45px; } .naw-signature__bottom { flex-direction:column; align-items:flex-start; gap:12px; } }
+{% endstylesheet %}
+{% schema %}
+{
+  "name":"NAW Brand Signature",
+  "settings":[
+    {"type":"text","id":"heading","label":"Accessible section title","default":"NIRHALIs Audio & Wire brand"},
+    {"type":"image_picker","id":"banner","label":"Signature banner artwork"},
+    {"type":"image_picker","id":"mobile_banner","label":"Optional mobile banner artwork"},
+    {"type":"text","id":"copy","label":"Supporting copy","default":"Audio, cables and desk essentials chosen for everyday use."},
+    {"type":"text","id":"button_text","label":"Browse link text","default":"Explore the collection"},
+    {"type":"url","id":"button_link","label":"Browse link destination"}
+  ],
+  "presets":[{"name":"NAW Brand Signature"}]
+}
+{% endschema %}

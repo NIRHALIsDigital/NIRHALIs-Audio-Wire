@@ -1,0 +1,166 @@
+{
+  "store": "NIRHALIs Audio & Wire",
+  "currency": "INR",
+  "snapshotDate": "2026-11-20",
+  "products": [
+    {
+      "title": "Noise · Buds R1 — True Wireless Earbuds",
+      "handle": "noise-buds-r1-true-wireless-earbuds",
+      "status": "DRAFT",
+      "vendor": "NIRHALIs Audio & Wire",
+      "productType": "Wireless Earbuds",
+      "variants": [
+        {
+          "title": "Matte Black",
+          "sku": "Buds-R1-Matte-Black",
+          "price": "1299.00",
+          "compareAtPrice": null,
+          "inStock": false
+        }
+      ]
+    },
+    {
+      "title": "JBL · Endurance Race — Sports True Wireless Earbuds (Black)",
+      "handle": "jbl-endurance-race-true-wireless-earbuds",
+      "status": "DRAFT",
+      "vendor": "NIRHALIs Audio & Wire",
+      "productType": "Wireless Earbuds",
+      "variants": [
+        {
+          "title": "Black",
+          "sku": "JBLENDURACEBLK",
+          "price": "4999.00",
+          "compareAtPrice": null,
+          "inStock": false
+        }
+      ]
+    },
+    {
+      "title": "Belkin BoostCharge Braided USB-C to USB-C 60W Cable — 2m Black",
+      "handle": "belkin-boostcharge-braided-usb-c-to-usb-c-60w-cable-2m-black",
+      "status": "DRAFT",
+      "vendor": "NIRHALIs Audio & Wire",
+      "productType": "Charging and Data Cables",
+      "variants": [
+        {
+          "title": "Default",
+          "sku": "CAB004bt2MBK",
+          "price": "849.00",
+          "compareAtPrice": null,
+          "inStock": false
+        }
+      ]
+    },
+    {
+      "title": "Belkin BoostCharge USB-C to USB-C Cable — 2m Black",
+      "handle": "belkin-boostcharge-usb-c-to-usb-c-cable-2m-black",
+      "status": "DRAFT",
+      "vendor": "NIRHALIs Audio & Wire",
+      "productType": "Charging and Data Cables",
+      "variants": [
+        {
+          "title": "Default",
+          "sku": "CAB003BT2MBK",
+          "price": "849.00",
+          "compareAtPrice": null,
+          "inStock": false
+        }
+      ]
+    },
+    {
+      "title": "Belkin BoostCharge USB-C to USB-C Cable 60W — 2m White",
+      "handle": "belkin-boostcharge-usb-c-to-usb-c-cable-60w-2m-white",
+      "status": "DRAFT",
+      "vendor": "Belkin",
+      "productType": "Charging & Data Cables",
+      "variants": [
+        {
+          "title": "Default",
+          "sku": "CAB003BT2MWH",
+          "price": "849.00",
+          "compareAtPrice": null,
+          "inStock": false
+        }
+      ]
+    },
+    {
+      "title": "EVM EnSport Bluetooth Neckband — Royal Blue (NB-027)",
+      "handle": "evm-ensport-bluetooth-neckband-royal-blue-nb-027",
+      "status": "DRAFT",
+      "vendor": "EVM",
+      "productType": "Neckbands & Wireless Audio",
+      "variants": [
+        {
+          "title": "Default",
+          "sku": "EVM-NB027-RB",
+          "price": "579.00",
+          "compareAtPrice": null,
+          "inStock": false
+        }
+      ]
+    },
+    {
+      "title": "NAW Everyday Charge Duo — Belkin USB-C 2m Black + White",
+      "handle": "naw-everyday-charge-duo-belkin-usb-c-2m-black-white",
+      "status": "ACTIVE",
+      "vendor": "NIRHALIs Audio & Wire",
+      "productType": "",
+      "variants": [
+        {
+          "title": "Default Title",
+          "sku": "NAW-BDL-CHARGE-DUO",
+          "price": "1549.00",
+          "compareAtPrice": null,
+          "inStock": false
+        }
+      ],
+      "descriptionHtml": "<h3>Two colours, two everyday USB-C cables</h3><p>This fixed bundle contains two Belkin BoostCharge USB-C to USB-C charging/sync cables, each 2 metres (6.6 ft):</p><ul>\n<li>\n<strong>1 × Black 2m standard cable</strong> — CAB003BT2MBK</li>\n<li>\n<strong>1 × White 2m standard cable</strong> — CAB003BT2MWH</li>\n</ul><p>For compatible USB-C charging devices and adapters. No power adapter is included. Check your device's charging specifications.</p><p><strong>Bundle price: ₹1,549</strong> versus ₹1,698 for the two NAW individual listings, saving ₹149.</p><p><strong>Availability:</strong> Listed for viewing only; currently sold out and checkout is disabled. We will enable ordering after both exact supplier SKUs are verified available. See the applicable manufacturer warranty terms for each item.</p>",
+      "featuredImage": {
+        "url": "https://cdn.shopify.com/s/files/1/1027/2034/0280/files/Belkin-Boost-Charge-USB-Type-C-Cable-2-meter-Black.jpg?v=1795088550",
+        "altText": "Belkin BoostCharge USB-C to USB-C 2m Black SKU CAB003BT2MBK"
+      }
+    },
+    {
+      "title": "NAW Durability Duo — Belkin Braided Black + Standard White USB-C 2m",
+      "handle": "naw-durability-duo-belkin-braided-black-standard-white-usb-c-2m",
+      "status": "ACTIVE",
+      "vendor": "NIRHALIs Audio & Wire",
+      "productType": "",
+      "variants": [
+        {
+          "title": "Default Title",
+          "sku": "NAW-BDL-DURABILITY-DUO",
+          "price": "1599.00",
+          "compareAtPrice": null,
+          "inStock": false
+        }
+      ],
+      "descriptionHtml": "<h3>One braided cable plus a standard spare</h3><p>This fixed bundle includes:</p><ul>\n<li>\n<strong>1 × Belkin BoostCharge braided USB-C to USB-C 60W cable, 2m Black</strong> — CAB004bt2MBK</li>\n<li>\n<strong>1 × Belkin BoostCharge standard USB-C to USB-C cable, 2m White</strong> — CAB003BT2MWH</li>\n</ul><p>Double-braided nylon on the black cable; standard construction on the white cable. Both cables require compatible USB-C devices and power sources. No charger or power adapter is included.</p><p><strong>Bundle price: ₹1,599</strong> versus ₹1,698 for both NAW individual listings, saving ₹99.</p><p><strong>Availability:</strong> Listed for viewing only; currently sold out and checkout is disabled. We will enable ordering only after both component models are confirmed available. Manufacturer warranty terms apply to each item separately.</p>",
+      "featuredImage": {
+        "url": "https://cdn.shopify.com/s/files/1/1027/2034/0280/files/71egVNGHcDL._SL1500.jpg?v=1795088548",
+        "altText": "Belkin BoostCharge Braided USB-C to USB-C 60W Cable 2m Black SKU CAB004bt2MBK"
+      }
+    },
+    {
+      "title": "NAW Audio & Charge Set — Noise Buds R1 + Belkin Braided USB-C 2m",
+      "handle": "naw-audio-charge-set-noise-buds-r1-belkin-braided-usb-c-2m",
+      "status": "ACTIVE",
+      "vendor": "NIRHALIs Audio & Wire",
+      "productType": "",
+      "variants": [
+        {
+          "title": "Default Title",
+          "sku": "NAW-BDL-AUDIO-CHARGE",
+          "price": "1999.00",
+          "compareAtPrice": null,
+          "inStock": false
+        }
+      ],
+      "descriptionHtml": "<h3>Wireless earbuds plus a durable USB-C cable</h3><p>This fixed bundle includes:</p><ul>\n<li>\n<strong>1 × Noise Buds R1 true wireless earbuds, Matte Black</strong> — Buds-R1-Matte-Black</li>\n<li>\n<strong>1 × Belkin BoostCharge braided USB-C to USB-C 60W cable, 2m Black</strong> — CAB004bt2MBK</li>\n</ul><p>The Belkin cable is a separate charging/data accessory for compatible USB-C devices. It is not a charger and no power adapter is included. Check compatibility before ordering.</p><p><strong>Bundle price: ₹1,999</strong> versus ₹2,148 for the two NAW individual listings, saving ₹149.</p><p><strong>Availability:</strong> Listed for viewing only; currently sold out and checkout is disabled. We will enable ordering only after we confirm the exact component SKUs and our final pricing review is complete. Manufacturer terms apply separately to each product.</p>",
+      "featuredImage": {
+        "url": "https://cdn.shopify.com/s/files/1/1027/2034/0280/files/naw-noise-buds-r1-matte-black-supplier.jpg?v=1794922216",
+        "altText": "Noise Buds R1 Matte Black, exact model shown by CompuTech Store"
+      }
+    }
+  ]
+}

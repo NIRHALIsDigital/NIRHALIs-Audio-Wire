@@ -1,0 +1,473 @@
+{% comment %}
+  NAW · The Pairing Edit.
+  Editorial preview only: bundles are drafts, gifts are unconfirmed.
+  Uses real published product imagery selected through product pickers.
+  No bundle cart links, faux discounts, or stock claims.
+{% endcomment %}
+{% liquid
+  assign first_product = section.settings.pair_product_one
+  assign second_product = section.settings.pair_product_two
+  assign clean_one = section.settings.clean_pair_one
+  assign clean_two = section.settings.clean_pair_two
+  assign audio_one = section.settings.audio_pair_one
+  assign audio_two = section.settings.audio_pair_two
+%}
+<section class="naw-pair-edit" aria-labelledby="naw-pair-edit-title-{{ section.id }}">
+  <div class="naw-pair-edit__inner">
+    <div class="naw-pair-edit__intro">
+      <div class="naw-pair-edit__heading">
+        <p class="naw-pair-edit__eyebrow">{{ section.settings.eyebrow | escape }} <span aria-hidden="true">/</span> {{ section.settings.status | escape }}</p>
+        <h2 id="naw-pair-edit-title-{{ section.id }}">{{ section.settings.heading | escape }}</h2>
+      </div>
+      <p class="naw-pair-edit__deck">{{ section.settings.description | escape }}</p>
+    </div>
+
+    <div class="naw-pair-edit__spotlight">
+      <div class="naw-pair-edit__photostage" aria-label="Desk Reset pairing: VicTsing mouse mat and Stuffcool 3-in-1 cable">
+        <div class="naw-pair-edit__image naw-pair-edit__image--one">
+          {% if first_product != blank and first_product.featured_image != blank %}
+            {{ first_product.featured_image | image_url: width: 740 | image_tag: loading: 'lazy', widths: '280, 500, 740', sizes: '(min-width: 900px) 22vw, 45vw', alt: first_product.title }}
+          {% endif %}
+        </div>
+        <span class="naw-pair-edit__plus" aria-hidden="true">+</span>
+        <div class="naw-pair-edit__image naw-pair-edit__image--two">
+          {% if second_product != blank and second_product.featured_image != blank %}
+            {{ second_product.featured_image | image_url: width: 740 | image_tag: loading: 'lazy', widths: '280, 500, 740', sizes: '(min-width: 900px) 22vw, 45vw', alt: second_product.title }}
+          {% endif %}
+        </div>
+        <p class="naw-pair-edit__photo-caption">{{ section.settings.product_caption | escape }}</p>
+      </div>
+      <div class="naw-pair-edit__feature-copy">
+        <p class="naw-pair-edit__feature-number">{{ section.settings.feature_label | escape }}</p>
+        <h3>{{ section.settings.feature_title | escape }}</h3>
+        <p class="naw-pair-edit__feature-explainer">{{ section.settings.feature_description | escape }}</p>
+        <div class="naw-pair-edit__price-line">
+          <strong>{{ section.settings.feature_price | escape }}</strong>
+          <span>{{ section.settings.feature_price_label | escape }}</span>
+        </div>
+        <p class="naw-pair-edit__comparison">{{ section.settings.feature_comparison | escape }}</p>
+        {% if section.settings.link_text != blank and section.settings.link_url != blank %}
+          <a class="naw-pair-edit__feature-cta" href="{{ section.settings.link_url }}">
+            {{ section.settings.link_text | escape }}
+            <span aria-hidden="true">↗</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="naw-pair-edit__continuation">
+      <div class="naw-pair-edit__extras">
+        <h3>{{ section.settings.more_heading | escape }}</h3>
+        <div class="naw-pair-edit__extra">
+          <div class="naw-pair-edit__extra-images" aria-hidden="true">
+            {% if clean_one != blank and clean_one.featured_image != blank %}
+              {{ clean_one.featured_image | image_url: width: 140 | image_tag: loading: 'lazy', widths: '70, 140', sizes: '54px', alt: '' }}
+            {% endif %}
+            {% if clean_two != blank and clean_two.featured_image != blank %}
+              {{ clean_two.featured_image | image_url: width: 140 | image_tag: loading: 'lazy', widths: '70, 140', sizes: '54px', alt: '' }}
+            {% endif %}
+          </div>
+          <span class="naw-pair-edit__extra-copy"><strong>{{ section.settings.pair_two_title | escape }}</strong><small>{{ section.settings.pair_two_description | escape }}</small></span>
+          <span class="naw-pair-edit__extra-price">{{ section.settings.pair_two_price | escape }}</span>
+        </div>
+        <div class="naw-pair-edit__extra">
+          <div class="naw-pair-edit__extra-images" aria-hidden="true">
+            {% if audio_one != blank and audio_one.featured_image != blank %}
+              {{ audio_one.featured_image | image_url: width: 140 | image_tag: loading: 'lazy', widths: '70, 140', sizes: '54px', alt: '' }}
+            {% endif %}
+            {% if audio_two != blank and audio_two.featured_image != blank %}
+              {{ audio_two.featured_image | image_url: width: 140 | image_tag: loading: 'lazy', widths: '70, 140', sizes: '54px', alt: '' }}
+            {% endif %}
+          </div>
+          <span class="naw-pair-edit__extra-copy"><strong>{{ section.settings.pair_three_title | escape }}</strong><small>{{ section.settings.pair_three_description | escape }}</small></span>
+          <span class="naw-pair-edit__extra-price">{{ section.settings.pair_three_price | escape }}</span>
+        </div>
+      </div>
+      <div class="naw-pair-edit__upgrade">
+        <p class="naw-pair-edit__upgrade-eyebrow">{{ section.settings.upgrade_label | escape }}</p>
+        <h3>{{ section.settings.upgrade_heading | escape }}</h3>
+        <p>{{ section.settings.upgrade_description | escape }}</p>
+      </div>
+    </div>
+
+    <footer class="naw-pair-edit__foot">
+      <p>{{ section.settings.disclaimer | escape }}</p>
+
+    </footer>
+  </div>
+</section>
+
+{% stylesheet %}
+  .naw-pair-edit {
+    background: #FAF7F2;
+    color: #2C2C2E;
+    padding: clamp(55px, 7vw, 94px) clamp(18px, 4vw, 60px) clamp(55px, 7vw, 92px);
+    font-family: var(--font-body--family), 'Manrope', sans-serif;
+  }
+  .naw-pair-edit__inner { max-width: 1280px; margin: 0 auto; }
+  .naw-pair-edit__intro { display: flex; justify-content: space-between; align-items: end; gap: 22px 50px; margin-bottom: 30px; }
+  .naw-pair-edit__eyebrow, .naw-pair-edit__feature-number, .naw-pair-edit__upgrade-eyebrow {
+    margin: 0 0 15px;
+    color: #645E58;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+  .naw-pair-edit__eyebrow span { padding: 0 5px; color: #E65100; }
+  .naw-pair-edit__heading h2 {
+    margin: 0;
+    color: #2C2C2E;
+    font-family: var(--font-heading--family), 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: clamp(34px, 4.8vw, 64px);
+    line-height: 1.06;
+    letter-spacing: -.053em;
+    text-wrap: balance;
+  }
+  .naw-pair-edit__deck { margin: 0 0 4px; max-width: 360px; font-size: 15px; color: #6B6660; line-height: 1.65; }
+  .naw-pair-edit__spotlight {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    min-height: 370px;
+    background: #EEE8DF;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+  .naw-pair-edit__photostage {
+    position: relative;
+    background: #E5DED5;
+    padding: clamp(22px, 3.4vw, 48px);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 38px minmax(0, 1fr);
+    align-items: center;
+    column-gap: clamp(2px, .9vw, 12px);
+    min-height: 350px;
+  }
+  .naw-pair-edit__image {
+    display: grid;
+    place-items: center;
+    min-width: 0;
+    aspect-ratio: 1 / 1;
+    background: #FAF7F2;
+    border-radius: 12px;
+    padding: 10px;
+    overflow: hidden;
+  }
+  .naw-pair-edit__image img { width: 100%; height: 100%; object-fit: contain; display: block; mix-blend-mode: multiply; }
+  .naw-pair-edit__plus { color: #2C2C2E; text-align: center; font-size: 26px; font-weight: 400; }
+  .naw-pair-edit__photo-caption {
+    position: absolute;
+    bottom: 14px;
+    left: 23px;
+    right: 23px;
+    margin: 0;
+    text-align: center;
+    color: #645E58;
+    font-size: 10px;
+    letter-spacing: .045em;
+  }
+  .naw-pair-edit__feature-copy {
+    padding: clamp(28px, 4vw, 58px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .naw-pair-edit__feature-copy h3 {
+    margin: 0 0 18px;
+    font-family: var(--font-heading--family), 'Manrope', sans-serif;
+    font-weight: 700;
+    letter-spacing: -.055em;
+    font-size: clamp(32px, 3.7vw, 51px);
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+  .naw-pair-edit__feature-explainer { margin: 0; font-size: 14px; line-height: 1.65; max-width: 390px; color: #5D5955; }
+  .naw-pair-edit__price-line { display: flex; align-items: baseline; gap: 13px; flex-wrap: wrap; margin-top: 28px; }
+  .naw-pair-edit__price-line strong {
+    font-weight: 700;
+    color: #2C2C2E;
+    letter-spacing: -.045em;
+    font-size: clamp(32px, 3.2vw, 44px);
+    line-height: 1;
+  }
+  .naw-pair-edit__price-line span { color: #6B6660; font-size: 12px; font-weight: 600; }
+  .naw-pair-edit__comparison { margin: 12px 0 0; font-size: 12px; color: #6B6660; line-height: 1.6; }
+  .naw-pair-edit__feature-cta {
+    margin-top: 26px;
+    display: inline-flex;
+    width: fit-content;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 13px 18px;
+    min-height: 48px;
+    background: #2C2C2E;
+    color: #FAF7F2;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.3;
+  }
+  .naw-pair-edit__feature-cta:hover { background: #1D1D20; color: #FAF7F2; }
+  .naw-pair-edit__feature-cta:focus-visible { outline: 3px solid #E65100; outline-offset: 4px; }
+  .naw-pair-edit__continuation {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.22fr) minmax(0, .78fr);
+    gap: clamp(22px, 4vw, 62px);
+    padding: 26px 4px 26px;
+    border-bottom: 1px solid #D6CFC7;
+  }
+  .naw-pair-edit__extras > h3 { margin: 0 0 14px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  .naw-pair-edit__extra { display: flex; justify-content: space-between; gap: 10px 30px; align-items: center; padding: 12px 0; border-top: 1px solid #E4DDD5; }
+  .naw-pair-edit__extra-images {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 5px;
+  }
+  .naw-pair-edit__extra-images img {
+    display: block;
+    width: clamp(36px, 4vw, 51px);
+    height: clamp(36px, 4vw, 51px);
+    object-fit: contain;
+    padding: 3px;
+    border-radius: 8px;
+    background: #F5F1EC;
+    border: 1px solid #E4DDD5;
+  }
+  .naw-pair-edit__extra .naw-pair-edit__extra-copy { display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1 1 auto; }
+  .naw-pair-edit__extra strong { font-size: 15px; font-weight: 700; }
+  .naw-pair-edit__extra small { font-size: 12px; line-height: 1.45; color: #6B6660; }
+  .naw-pair-edit__extra-price { text-align: right; font-size: 14px; font-weight: 700; white-space: nowrap; }
+  .naw-pair-edit__upgrade { border-left: 1px solid #D6CFC7; padding: 8px 0 8px clamp(20px, 3vw, 44px); }
+  .naw-pair-edit__upgrade-eyebrow { margin-bottom: 14px; }
+  .naw-pair-edit__upgrade h3 { font-size: 25px; letter-spacing: -.04em; line-height: 1.15; margin: 0 0 10px; font-weight: 700; }
+  .naw-pair-edit__upgrade > p:last-child { margin: 0; font-size: 13px; line-height: 1.65; color: #6B6660; }
+  .naw-pair-edit__foot { display: flex; align-items: center; justify-content: space-between; gap: 18px 30px; padding: 19px 4px 0; }
+  .naw-pair-edit__foot p { margin: 0; max-width: 750px; font-size: 12px; line-height: 1.6; color: #6B6660; }
+  .naw-pair-edit__link { color: #2C2C2E; text-decoration: none; font-size: 13px; font-weight: 700; white-space: nowrap; border-bottom: 1px solid #2C2C2E; padding-bottom: 4px; }
+  .naw-pair-edit__link:hover { color: #2C2C2E; border-color: #E65100; }
+  .naw-pair-edit__link:focus-visible { outline: 3px solid #E65100; outline-offset: 5px; }
+  @media (max-width: 900px) {
+    .naw-pair-edit__intro { display: block; }
+    .naw-pair-edit__deck { margin-top: 14px; max-width: 600px; }
+    .naw-pair-edit__spotlight { grid-template-columns: 1fr; }
+    .naw-pair-edit__photostage { min-height: 290px; }
+    .naw-pair-edit__continuation { grid-template-columns: 1fr; gap: 20px; }
+    .naw-pair-edit__upgrade { border-left: none; border-top: 1px solid #D6CFC7; padding: 22px 0 4px; }
+  }
+  @media (max-width: 530px) {
+    .naw-pair-edit { padding-block: 58px 70px; }
+    .naw-pair-edit__spotlight { border-radius: 14px; }
+    .naw-pair-edit__photostage { padding: 18px 17px 36px; grid-template-columns: minmax(0,1fr) 24px minmax(0,1fr); min-height: 190px; }
+    .naw-pair-edit__plus { font-size: 21px; }
+    .naw-pair-edit__image { padding: 5px; border-radius: 8px; }
+    .naw-pair-edit__photo-caption { bottom: 10px; font-size: 9px; }
+    .naw-pair-edit__feature-copy { padding: 30px 25px 32px; }
+    .naw-pair-edit__feature-copy h3 { font-size: 35px; }
+    .naw-pair-edit__continuation { margin-top: 4px; padding-top: 20px; }
+    .naw-pair-edit__foot { align-items: flex-start; flex-direction: column; }
+    .naw-pair-edit__extra { gap: 8px; flex-wrap: wrap; }
+    .naw-pair-edit__extra-price { margin-left: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .naw-pair-edit__image img { animation: none; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "NAW · The Pairing Edit",
+  "tag": "section",
+  "class": "naw-pairing-edit",
+  "enabled_on": {
+    "templates": [
+      "index"
+    ]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Section label",
+      "default": "THE PAIRING EDIT"
+    },
+    {
+      "type": "text",
+      "id": "status",
+      "label": "Availability label",
+      "default": "LIVE FOR ENQUIRIES"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "Good things work better together."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Introduction",
+      "default": "Pair your everyday essentials. Ask us about our curated bundle offers; we'll confirm stock, delivery and your final total before payment."
+    },
+    {
+      "type": "product",
+      "id": "pair_product_one",
+      "label": "First component for feature photo"
+    },
+    {
+      "type": "product",
+      "id": "pair_product_two",
+      "label": "Second component for feature photo"
+    },
+    {
+      "type": "text",
+      "id": "product_caption",
+      "label": "Photo caption",
+      "default": "VicTsing mouse mat + Stuffcool 3-in-1 cable"
+    },
+    {
+      "type": "text",
+      "id": "feature_label",
+      "label": "Featured pairing label",
+      "default": "FEATURED BUNDLE / DESK RESET"
+    },
+    {
+      "type": "text",
+      "id": "feature_title",
+      "label": "Featured pairing name",
+      "default": "Desk Reset."
+    },
+    {
+      "type": "textarea",
+      "id": "feature_description",
+      "label": "Featured pairing description",
+      "default": "A spacious mouse mat and a versatile 3-in-1 cable — two everyday essentials offered together."
+    },
+    {
+      "type": "text",
+      "id": "feature_price",
+      "label": "Featured planned bundle price",
+      "default": "₹1,249"
+    },
+    {
+      "type": "text",
+      "id": "feature_price_label",
+      "label": "Price description",
+      "default": "bundle enquiry price"
+    },
+    {
+      "type": "text",
+      "id": "feature_comparison",
+      "label": "Individual prices note",
+      "default": "Individual items total ₹1,388. Confirm availability and shipping before payment."
+    },
+    {
+      "type": "text",
+      "id": "more_heading",
+      "label": "Other pairings heading",
+      "default": "Explore the other pairings"
+    },
+    {
+      "type": "product",
+      "id": "clean_pair_one",
+      "label": "Clean Desk: keyboard and mouse"
+    },
+    {
+      "type": "product",
+      "id": "clean_pair_two",
+      "label": "Clean Desk: mouse mat"
+    },
+    {
+      "type": "product",
+      "id": "audio_pair_one",
+      "label": "Everyday Audio: earbuds"
+    },
+    {
+      "type": "product",
+      "id": "audio_pair_two",
+      "label": "Everyday Audio: cable"
+    },
+    {
+      "type": "text",
+      "id": "pair_two_title",
+      "label": "Second pairing name",
+      "default": "Clean Desk"
+    },
+    {
+      "type": "text",
+      "id": "pair_two_description",
+      "label": "Second pairing details",
+      "default": "Keyboard and mouse + desk mat"
+    },
+    {
+      "type": "text",
+      "id": "pair_two_price",
+      "label": "Second pairing planned price",
+      "default": "₹1,649 offer"
+    },
+    {
+      "type": "text",
+      "id": "pair_three_title",
+      "label": "Third pairing name",
+      "default": "Everyday Audio"
+    },
+    {
+      "type": "text",
+      "id": "pair_three_description",
+      "label": "Third pairing details",
+      "default": "Noise Buds R1 + 3-in-1 cable"
+    },
+    {
+      "type": "text",
+      "id": "pair_three_price",
+      "label": "Third pairing planned price",
+      "default": "₹1,699 offer"
+    },
+    {
+      "type": "text",
+      "id": "upgrade_label",
+      "label": "Upgrade eyebrow",
+      "default": "COMPLIMENTARY SUPPORT"
+    },
+    {
+      "type": "text",
+      "id": "upgrade_heading",
+      "label": "Upgrade heading",
+      "default": "Make sure it fits."
+    },
+    {
+      "type": "textarea",
+      "id": "upgrade_description",
+      "label": "Upgrade details",
+      "default": "Message us your device model for free compatibility guidance before buying. A physical cable-organiser gift is not offered at present."
+    },
+    {
+      "type": "textarea",
+      "id": "disclaimer",
+      "label": "Disclaimer",
+      "default": "Bundle enquiries are open. Final price, stock and combined shipping are confirmed before payment. Online bundle checkout is not yet enabled."
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Information link",
+      "default": "Explore bundles & enquire"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Information page"
+    }
+  ],
+  "presets": [
+    {
+      "name": "NAW · The Pairing Edit"
+    }
+  ]
+}
+{% endschema %}

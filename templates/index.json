@@ -1,0 +1,292 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "product_list_fa6P9H": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "name": "t:names.header",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_list_text_YFtzcL": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
+              "settings": {
+                "text": "<h2>Explore the collection</h2>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_list_button_MWeP9V": {
+              "type": "_product-list-button",
+              "name": "t:names.product_list_button",
+              "settings": {
+                "label": "View all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_list_text_YFtzcL",
+            "product_list_button_MWeP9V"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 4,
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_677WP3": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "square",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title_YXxMTj": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "price_JQzVV4": {
+              "type": "price",
+              "name": "t:names.product_price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_card_gallery_677WP3",
+            "product_title_YXxMTj",
+            "price_JQzVV4"
+          ]
+        }
+      },
+      "name": "t:names.product_list",
+      "settings": {
+        "collection": "all",
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "max_products": 10,
+        "columns": 3,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 22,
+        "rows_gap": 28,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 28,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 42,
+        "padding-block-end": 48
+      }
+    },
+    "naw_editorial": {
+      "type": "naw-editorial-home",
+      "settings": {
+        "eyebrow": "NIRHALIs / MULTI-BRAND TECH",
+        "heading": "Everyday tech. Thoughtfully selected.",
+        "description": "A curated selection of headphones, charging cables and desk essentials from established third-party brands. Clear product information and an easy way to ask before you buy.",
+        "cta_text": "Explore the collection",
+        "cta_link": "shopify://collections/all",
+        "subline": "Independent multi-brand store / Thane, India",
+        "visual_label": "The everyday edit",
+        "categories_heading": "Find your essentials",
+        "categories_description": "Listen. Connect. Focus.",
+        "category_1": "headphones",
+        "category_description_1": "Everyday listening, without distraction.",
+        "category_2": "cables",
+        "category_description_2": "Charge and connect with clarity.",
+        "category_3": "desk-essentials",
+        "category_description_3": "Make room for focused work.",
+        "principles_heading": "Independent selection",
+        "principle_1": "Third-party brands",
+        "principle_2": "Listed prices upfront",
+        "principle_3": "Questions welcome on WhatsApp",
+        "hero_image": "shopify://shop_images/naw-campaign-wave-detail.webp",
+        "category_image_1": "shopify://shop_images/naw-category-sound.webp",
+        "category_image_2": "shopify://shop_images/naw-category-connect.webp",
+        "category_image_3": "shopify://shop_images/naw-category-focus.webp"
+      }
+    },
+    "naw_motion": {
+      "type": "naw-motion-story",
+      "settings": {
+        "label": "A quieter kind of technology",
+        "heading": "The small details make a difference.",
+        "description": "Everyday sound, charging and workspace accessories from independent brands, brought together in one place.",
+        "link_label": "Browse essentials",
+        "link_target": "shopify://collections/all",
+        "motion_gif": "shopify://shop_images/naw-audio-wave.gif",
+        "motion_poster": "shopify://shop_images/naw-motion-poster.webp",
+        "caption": "NAW / Sound in motion"
+      }
+    },
+    "naw_brand_signature": {
+      "type": "naw-brand-signature",
+      "settings": {
+        "heading": "NIRHALIs Audio & Wire brand",
+        "banner": "shopify://shop_images/naw-brand-signature-banner.webp",
+        "copy": "Independent selection. Familiar brands. Clear product information.",
+        "button_text": "Explore the collection",
+        "button_link": "shopify://collections/all"
+      }
+    },
+    "naw_bundle_perks": {
+      "type": "naw-bundles-upgrades",
+      "settings": {
+        "eyebrow": "THE PAIRING EDIT",
+        "status": "LIVE FOR ENQUIRIES",
+        "heading": "Good things work better together.",
+        "description": "Pair your everyday essentials. Ask us about our curated bundle offers; we'll confirm stock, delivery and your final total before payment.",
+        "pair_product_one": "shopify://products/victsing-large-desk-mouse-mat",
+        "pair_product_two": "shopify://products/stuffcool-tres-3-in-1-braided-cable-1-5m",
+        "clean_pair_one": "shopify://products/hammok-majestic-wireless-keyboard-mouse",
+        "clean_pair_two": "shopify://products/victsing-large-desk-mouse-mat",
+        "audio_pair_one": "shopify://products/noise-buds-r1-true-wireless-earbuds",
+        "audio_pair_two": "shopify://products/stuffcool-tres-3-in-1-braided-cable-1-5m",
+        "product_caption": "VicTsing mouse mat + Stuffcool 3-in-1 cable",
+        "feature_label": "FEATURED BUNDLE / DESK RESET",
+        "feature_title": "Desk Reset.",
+        "feature_description": "A spacious mouse mat and a versatile 3-in-1 cable — two everyday essentials offered together.",
+        "feature_price": "₹1,249",
+        "feature_price_label": "bundle enquiry price",
+        "feature_comparison": "Individual items total ₹1,388. Confirm availability and shipping before payment.",
+        "more_heading": "Explore the other pairings",
+        "pair_two_title": "Clean Desk",
+        "pair_two_description": "Keyboard and mouse + desk mat",
+        "pair_two_price": "₹1,649 offer",
+        "pair_three_title": "Everyday Audio",
+        "pair_three_description": "Noise Buds R1 + 3-in-1 cable",
+        "pair_three_price": "₹1,699 offer",
+        "upgrade_label": "COMPLIMENTARY SUPPORT",
+        "upgrade_heading": "Make sure it fits.",
+        "upgrade_description": "Message us your device model for free compatibility guidance before buying. A physical cable-organiser gift is not offered at present.",
+        "disclaimer": "Bundle enquiries are open. Final price, stock and combined shipping are confirmed before payment. Online bundle checkout is not yet enabled.",
+        "link_text": "Explore bundles & enquire",
+        "link_url": "/pages/bundles-and-upgrades"
+      }
+    }
+  },
+  "order": [
+    "naw_editorial",
+    "naw_motion",
+    "product_list_fa6P9H",
+    "naw_bundle_perks",
+    "naw_brand_signature"
+  ]
+}
