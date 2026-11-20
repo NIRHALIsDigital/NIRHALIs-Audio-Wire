@@ -1,6 +1,6 @@
 {% comment %}
   NAW · The Pairing Edit.
-  Editorial preview only: bundles are drafts, gifts are unconfirmed.
+  Bundle listings are available for enquiries.
   Uses real published product imagery selected through product pickers.
   No bundle cart links, faux discounts, or stock claims.
 {% endcomment %}
@@ -23,18 +23,18 @@
     </div>
 
     <div class="naw-pair-edit__spotlight">
-      <div class="naw-pair-edit__photostage" aria-label="Desk Reset pairing: VicTsing mouse mat and Stuffcool 3-in-1 cable">
-        <div class="naw-pair-edit__image naw-pair-edit__image--one">
+      <div class="naw-pair-edit__photostage" aria-label="{{ section.settings.product_caption | escape }}">
+        <div class="naw-pair-edit__image naw-pair-edit__image--one{% if second_product == blank or second_product.featured_image == blank %} naw-pair-edit__image--single{% endif %}">
           {% if first_product != blank and first_product.featured_image != blank %}
             {{ first_product.featured_image | image_url: width: 740 | image_tag: loading: 'lazy', widths: '280, 500, 740', sizes: '(min-width: 900px) 22vw, 45vw', alt: first_product.title }}
           {% endif %}
         </div>
-        <span class="naw-pair-edit__plus" aria-hidden="true">+</span>
-        <div class="naw-pair-edit__image naw-pair-edit__image--two">
-          {% if second_product != blank and second_product.featured_image != blank %}
+        {% if second_product != blank and second_product.featured_image != blank %}
+          <span class="naw-pair-edit__plus" aria-hidden="true">+</span>
+          <div class="naw-pair-edit__image naw-pair-edit__image--two">
             {{ second_product.featured_image | image_url: width: 740 | image_tag: loading: 'lazy', widths: '280, 500, 740', sizes: '(min-width: 900px) 22vw, 45vw', alt: second_product.title }}
-          {% endif %}
-        </div>
+          </div>
+        {% endif %}
         <p class="naw-pair-edit__photo-caption">{{ section.settings.product_caption | escape }}</p>
       </div>
       <div class="naw-pair-edit__feature-copy">
@@ -134,6 +134,7 @@
     border-radius: 18px;
     overflow: hidden;
   }
+  .naw-pair-edit__image--single { grid-column: 1 / -1; }
   .naw-pair-edit__photostage {
     position: relative;
     background: #E5DED5;
